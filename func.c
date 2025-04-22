@@ -35,10 +35,12 @@ extern long err_line_no ;
 extern long err_status ;
 extern long int_flag ;
 extern long quit_flag ;
+long n1 ;
+long n2 ;
 long suma ;
 
 static int _done_init_global_variables=1;
-A4GL_INTERNAL_FUNCTION void init_global_variables_func_429(void) {
+A4GL_INTERNAL_FUNCTION void init_global_variables_func_5cd(void) {
  static void *_objData[]={
 NULL};
    if (_done_init_global_variables==0) return;
@@ -47,6 +49,8 @@ NULL};
    A4GL_check_version(_module_name,"1.6",1);
    A4GL_check_dependant_tables(_module_name, _CompileTimeSQLType, _dependantTables);
    /* Print nullify */
+   n1=0;
+   n2=0;
    suma=0;
 }
 
@@ -62,7 +66,7 @@ NULL};
    A4GL_check_dependant_tables(_module_name, _CompileTimeSQLType, _dependantTables);
    /* Print nullify */
    // Initialise the current global variables
-   init_global_variables_func_429();
+   init_global_variables_func_5cd();
    // Initialise any other global variables
 }
 
@@ -85,14 +89,32 @@ static char *_functionName = "MAIN";
    A4GLSTK_pushFunction_v2(_functionName,_paramnames,_nargs,_module_name,5,_objData);
 
    A4GL_clr_ignore_error_list();
-   /* CMD : E_CMD_CALL_CMD Line 6 E_MET_MAIN_DEFINITION */
+   /* CMD : E_CMD_LET_CMD Line 6 E_MET_MAIN_DEFINITION */
    A4GLSTK_setCurrentLine(_module_name,6);
    aclfgli_clr_err_flg();
-   A4GL_push_long(1);
-   A4GL_push_long(2);
+   A4GL_push_long(10);
+
+   A4GL_pop_var2(&n1,2,0);
+      ERR_CHK_ERROR  { A4GL_chk_err(6,_module_name); }
+   A4GL_clr_ignore_error_list();
+   /* CMD : E_CMD_LET_CMD Line 7 E_MET_MAIN_DEFINITION */
+   A4GLSTK_setCurrentLine(_module_name,7);
+   aclfgli_clr_err_flg();
+   A4GL_push_long(20);
+
+   A4GL_pop_var2(&n2,2,0);
+      ERR_CHK_ERROR  { A4GL_chk_err(7,_module_name); }
+   A4GL_clr_ignore_error_list();
+   /* CMD : E_CMD_CALL_CMD Line 9 E_MET_MAIN_DEFINITION */
+   A4GLSTK_setCurrentLine(_module_name,9);
+   aclfgli_clr_err_flg();
+
+   A4GL_push_long(n1);
+
+   A4GL_push_long(n2);
    /* done print expr */
    {int _retvars;A4GL_set_status(0,0);
-   A4GLSTK_setCurrentLine(_module_name,6);
+   A4GLSTK_setCurrentLine(_module_name,9);
    _retvars=aclfgl_sumar(2);
    /* pr 1 */
    { /* print_returning */
@@ -105,19 +127,19 @@ static char *_functionName = "MAIN";
    CHECK_RETURN_AND_POP(1);
    }
    }
-      ERR_CHK_ERROR  { A4GL_chk_err(6,_module_name); }
+      ERR_CHK_ERROR  { A4GL_chk_err(9,_module_name); }
    A4GL_clr_ignore_error_list();
-   /* CMD : E_CMD_DISPLAY_CMD Line 7 E_MET_MAIN_DEFINITION */
-   A4GLSTK_setCurrentLine(_module_name,7);
+   /* CMD : E_CMD_DISPLAY_CMD Line 10 E_MET_MAIN_DEFINITION */
+   A4GLSTK_setCurrentLine(_module_name,10);
    aclfgli_clr_err_flg();
-   A4GL_push_char("suma: ");
+   A4GL_push_char("suma es: ");
 
    A4GL_push_long(suma);
    A4GL_push_int(-1);
    A4GL_push_int(-1);
    A4GL_display_at(2,0xffffffff);
-      ERR_CHK_ERROR  { A4GL_chk_err(7,_module_name); }
-   A4GLSTK_popFunction_nl(0, 9);
+      ERR_CHK_ERROR  { A4GL_chk_err(10,_module_name); }
+   A4GLSTK_popFunction_nl(0, 12);
    A4GL_fgl_end_4gl_0();
    return 0;
 }
@@ -146,8 +168,8 @@ _fbind[0].ptr= &a;
 _fbind[1].ptr= &b;
  void *_objData[]={
 NULL};
-A4GLSTK_pushFunction_v2(_functionName,_paramnames,_nargs,_module_name,11,_objData);
-if (_nargs!=2) {A4GL_set_status(-3002,0);A4GL_pop_args(_nargs);A4GLSTK_popFunction_nl(0,11);return -1;}
+A4GLSTK_pushFunction_v2(_functionName,_paramnames,_nargs,_module_name,14,_objData);
+if (_nargs!=2) {A4GL_set_status(-3002,0);A4GL_pop_args(_nargs);A4GLSTK_popFunction_nl(0,14);return -1;}
 
    init_module_variables();
    /* Print nullify */
@@ -155,22 +177,22 @@ if (_nargs!=2) {A4GL_set_status(-3002,0);A4GL_pop_args(_nargs);A4GLSTK_popFuncti
    b=0;
    {int _lstatus=a4gl_status;
    A4GL_pop_params_and_save_blobs(_fbind,2,&_blobdata);
-   if (_lstatus!=a4gl_status) { A4GL_chk_err(11,_module_name);  }
+   if (_lstatus!=a4gl_status) { A4GL_chk_err(14,_module_name);  }
    }
 
    A4GL_clr_ignore_error_list();
-   /* CMD : E_CMD_RETURN_CMD Line 13 E_MET_FUNCTION_DEFINITION */
-   A4GLSTK_setCurrentLine(_module_name,13);
+   /* CMD : E_CMD_RETURN_CMD Line 16 E_MET_FUNCTION_DEFINITION */
+   A4GLSTK_setCurrentLine(_module_name,16);
    aclfgli_clr_err_flg();
 
    A4GL_push_long(a);
 
    A4GL_push_long(b);
    A4GL_pushop(OP_ADD);
-   A4GLSTK_popFunction_nl(1,13);
+   A4GLSTK_popFunction_nl(1,16);
    A4GL_copy_back_blobs(_blobdata,1);
    return 1;
-   A4GLSTK_popFunction_nl(0,14);
+   A4GLSTK_popFunction_nl(0,17);
    A4GL_copy_back_blobs(_blobdata,0);
    return 0;
 }

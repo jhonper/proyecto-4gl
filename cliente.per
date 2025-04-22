@@ -1,0 +1,13 @@
+--SCHEMA "public"  -- opcional, si usás base de datos
+DATABASE FORMONLY
+SCREEN
+{
+    Nombre  : [f_nombre  ]
+    Edad    : [f_edad    ]
+}
+--TABLES
+    --cliente
+ATTRIBUTES
+    f_nombre = formonly.nombre TYPE CHAR;
+    f_edad   = formonly.edad TYPE INTEGER;
+END
