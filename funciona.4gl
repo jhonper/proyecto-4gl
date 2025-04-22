@@ -1,0 +1,15 @@
+GLOBALS
+	DEFINE a INT, b INT, suma INT
+END GLOBALS
+
+MAIN
+	CALL sumar()
+	
+	FUNCTION sumar(a, b)
+		DEFINE a INT, b INT
+		RETURN a + b
+	END FUNCTION
+	
+	CALL sumar(1,2) RETURNING suma
+	DISPLAY "suma: "
+END MAIN

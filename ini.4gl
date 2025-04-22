@@ -1,0 +1,12 @@
+
+	GLOBALS
+		DEFINE a INTEGER, b INTEGER
+	END GLOBALS
+
+MAIN
+	IF a > b THEN
+		DISPLAY "Es mayor "
+	ELSE DISPLAY "No es mayor"
+	END IF	
+
+END MAIN

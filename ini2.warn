@@ -1,0 +1,4 @@
+ini2.c: In function 'main':
+ini2.c:98:10: warning: implicit declaration of function 'A4GL_ensure_numeric_prompt_var' [-Wimplicit-function-declaration]
+   98 |          A4GL_ensure_numeric_prompt_var(3);
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

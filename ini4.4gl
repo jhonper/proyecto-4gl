@@ -1,0 +1,4 @@
+MAIN
+	DISPLAY "hola mundo!"
+	SLEEP 4
+END MAIN
